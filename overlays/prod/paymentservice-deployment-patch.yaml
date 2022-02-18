@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: shippingservice
+  name: paymentservice
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
-        app: shippingservice
+        app: paymentservice
     spec:
       containers:
       - name: server
-        image: vinaydevopslearning/shippingservice:v1
+        image: vinaydevopslearning/paymentservice:v1
         ports:
         - containerPort: 50051
         env:
