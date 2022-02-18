@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: productcatalogservice
+    spec:
+      containers:
+      - name: server
+        image: vinaydevopslearning/productcatalogservice:v1
+        ports:
+        - containerPort: 3550
+        env:
+        - name: PORT
+          value: "3550"

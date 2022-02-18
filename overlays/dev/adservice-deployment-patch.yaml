@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: adservice
+    spec:
+      containers:
+      - name: server
+        image: vinaydevopslearning/adservice:v1
+        ports:
+        - containerPort: 9555
+        env:
+        - name: PORT
+          value: "9555"
